@@ -1,0 +1,14 @@
+//P124 梁顺明
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="KDWB">口袋微博</string>
+    <string name="RegActivity">口袋微博——注册</string>
+    <string name="FuncitonTab">口袋微博——个人中心</string>
+    <string name="PublishActivity">口袋微博——快速发布</string>
+    <string name="btnSearch">搜索</string>
+    <string name="btnDelete">删除</string>
+    <string name="tvInputStatus">更新您的心情</string>
+    <string name="btnStatus">今天心情怎么样</string>
+    <string name="btnEdit">编辑</string>
+    <string name="btnPublishMofify">发布修改</string>
+</resources>
