@@ -1,41 +1,47 @@
-//  »ÆÃô  ÑîÓîæÃ
+//  ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 package wyf.wpf;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.os.Bundle;
 import android.os.Handler;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.Gallery;
 import android.widget.Spinner;
 import android.widget.TextView;
+/*import android.widget.ViewSwitcher;  
+import android.widget.ViewSwitcher.ViewFactory;*/
 
 public class AlbumActivity extends Activity implements ViewSwitcher.ViewFactory{
-	List<string []>photoInfoList = new ArrayList<string []>();
+	List<String []> photoInfoList = new ArrayList<String []>();
 	Bitmap [] photoList;
 	Gallery gl=null;
 	Spinner sp=null;
-	MyConnector mc=null;
+	MyConnector mc=null;   //MyConnectoræ–‡ä»¶è¿˜æœªå®šä¹‰
 	String xid="";
 	String uno="";
 	String visitor="";
 	String pid="";
-	int form=-1;
+	int from=-1;
 	List<String []>albumInfoList=new ArrayList<String []>();
 	BaseAdapter baSpinner = new BaseAdapter(){};
 	BaseAdapter baGallery = new BaseAdapter(){};
 	OnItemClickListener myListener = new OnItemClickListener(){};
 	Handler myHandler = new Handler(){
+		
+	};
 		protected void onCreate(Bundle savedInstanceState){
 			super.onCreate(savedInstanceState);
 			setContentView(R.layout.album);
 			Intent intent = getIntent();
 			uno=intent.getStringExtra("uno");
 			visitor=intent.getStringExtra("vistor");
-			from=intent.getInExtra("from",-1);
+			from=intent.getIntExtra("from",-1);
 			int position=intent.getIntExtra("position",0);
 			String [] albumInfoArray=intent.getStringArrayExtra("albumlist");
 			xid=intent.getStringExtra("xid");	
@@ -47,10 +53,10 @@ public class AlbumActivity extends Activity implements ViewSwitcher.ViewFactory{
 		sp=(Spinner)findViewById(R.id.spAlbum);
 		sp.setAdapter(baSpinner);
 		sp.setSelection(position);
-		sp.setOnItemSelectedListener(new OnItemSelectedListener(){
+		sp.setOnItemSelectedListener(new OnItemSelectedListener() {
 			gl=(Gallery)findViewById(R.id.galleryPhoto);
 			gl.setOnItemClickListener(myListener);
-			is=|(ImageSwitcher)findViewById|(R.id.isPhoto);
+			is=(ImageSwitcher)findViewById|(R.id.isPhoto);
 			is.setFactory(this);
 			is.setInAnimation(AnimationUtils.loadAnimation(this, android.R.anim.fade_in));
 			is.setOutAnimation(AnimationUtils.loadAnimation(this,andriod.R.anim.fade_out));
@@ -67,11 +73,9 @@ public class AlbumActivity extends Activity implements ViewSwitcher.ViewFactory{
 			public void getPhotoList(){}
 			public void deletePhoto(){}
 			public View makeView(){}	
-			
-			
-		}
+	
 
 		}
 	}
 
-}
+
