@@ -1,5 +1,4 @@
-//RegActivity.java  146é¡µ 23 
-//23 ä¸˜è¿œæŸ±
+//RegActivity.java  146Ò³ 23 ÇğÔ¶Öù 
 
 
  package wyf.wpf;
@@ -16,7 +15,7 @@ pubic class RegActivity extends Activity{
    Button btnReg = (Button)findViewById(R.id.btnReg);
    btnReg.setOnClickListener(new View.OnClickListener(){
    public void onClick(View v){
-   pd = ProgressDialog.show(RegActivity.this,"è¯·ç¨å€™...","æ­£åœ¨è¿æ¥æœåŠ¡å™¨...",
+   pd = ProgressDialog.show(RegActivity.this,"ÇëÉÔºò...","ÕıÔÚÁ¬½Ó·şÎñÆ÷...",
    false );
    register(); 
 }
